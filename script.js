@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             showNotification('Envoi du message en cours...', 'info');
             
-            fetch('https://formsubmit.co/ajax/nassihhoussam073@gmail.com', {
+            fetch('https://formsubmit.co/ajax/reddadbusiness@gmail.com', {
                 method: 'POST',
                 headers: { 
                     'Content-Type': 'application/json',
@@ -302,7 +302,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Console welcome message
-    console.log('%c👋 Bienvenue sur le portfolio de Houssam Nassih!', 'color: #2563eb; font-size: 20px; font-weight: bold;');
+    console.log('%c👋 Bienvenue sur le portfolio de Reddad Chaouay!', 'color: #2563eb; font-size: 20px; font-weight: bold;');
     console.log('%cMerci pour votre intérêt! N\'hésitez pas à me contacter.', 'color: #6b7280; font-size: 14px;');
 });
 
