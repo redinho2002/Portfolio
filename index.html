@@ -3,76 +3,180 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reddad Chaouay - Portfolio</title>
+    <title>Reddad Chaouay — Portfolio</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="nav-container">
-                <div class="logo">RC</div>
-                <ul class="nav-menu">
-                    <li><a href="#about">À propos</a></li>
-                    <li><a href="#education">Formation</a></li>
-                    <li><a href="#projects">Expériences</a></li>
-                    <li><a href="#skills">Compétences</a></li>
-                    <li><a href="#certifications">Certifications</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-                <div class="nav-toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
+
+    <!-- Loader -->
+    <div class="loader" id="loader">
+        <div class="loader-inner">
+            <span class="loader-text">RC</span>
+        </div>
+    </div>
+
+    <!-- Cursor -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursorFollower"></div>
+
+    <!-- Particles -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- Header -->
+    <header id="header">
+        <nav class="nav-container">
+            <a href="#hero" class="logo">
+                <span>RC</span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#about" class="nav-link">À propos</a></li>
+                <li><a href="#education" class="nav-link">Formation</a></li>
+                <li><a href="#projects" class="nav-link">Expériences</a></li>
+                <li><a href="#skills" class="nav-link">Compétences</a></li>
+                <li><a href="#certifications" class="nav-link">Certifications</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </nav>
     </header>
 
     <main>
+
+        <!-- Hero Section -->
         <section id="hero">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1>Reddad Chaouay</h1>
-                    <h2>Étudiant en Ingénierie Informatique (IA & Data)</h2>
-                    <p>Étudiant en 5ème année en ingénierie informatique (IA & Data) à l'EMSI Casablanca, passionné par le développement logiciel, l'intelligence artificielle et l'analyse de données.</p>
+                    <div class="hero-badge">
+                        <span class="badge-dot"></span>
+                        Disponible pour stage / alternance
+                    </div>
+                    <h1>
+                        <span class="name-line">Reddad</span>
+                        <span class="name-line highlight">Chaouay</span>
+                    </h1>
+                    <div class="hero-role">
+                        <span class="role-prefix">&lt;</span>
+                        <span class="typed-text" id="typedText"></span>
+                        <span class="typing-cursor">|</span>
+                        <span class="role-suffix">/&gt;</span>
+                    </div>
+                    <p class="hero-description">
+                        Étudiant en 5ème année en ingénierie informatique <strong>(IA & Data)</strong> à l'EMSI Casablanca. Passionné par l'intelligence artificielle, le développement logiciel et l'analyse de données.
+                    </p>
                     <div class="hero-buttons">
-                        <a href="#contact" class="btn primary">Me contacter</a>
-                        <a href="https://github.com/redinho2002" target="_blank" class="btn secondary">
-                            <i class="fab fa-github"></i> GitHub
+                        <a href="#contact" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                            Me contacter
                         </a>
+                        <a href="https://github.com/redinho2002" target="_blank" class="btn btn-outline">
+                            <i class="fab fa-github"></i>
+                            GitHub
+                        </a>
+                        <a href="https://www.linkedin.com/in/reddad-chaouay-4a4023311/" target="_blank" class="btn btn-outline">
+                            <i class="fab fa-linkedin"></i>
+                            LinkedIn
+                        </a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">3+</span>
+                            <span class="stat-label">Projets</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <span class="stat-number">8+</span>
+                            <span class="stat-label">Certifications</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <span class="stat-number">5</span>
+                            <span class="stat-label">Langues</span>
+                        </div>
                     </div>
                 </div>
                 <div class="hero-image">
-                    <div class="profile-circle">
-                        <img src="assets/img/profile.png" alt="Reddad Chaouay" class="profile-img">
+                    <div class="profile-wrapper">
+                        <div class="profile-ring ring-1"></div>
+                        <div class="profile-ring ring-2"></div>
+                        <div class="profile-ring ring-3"></div>
+                        <div class="profile-circle">
+                            <img src="assets/img/profile.jpg" alt="Reddad Chaouay" class="profile-img">
+                        </div>
+                        <div class="profile-badge badge-top">
+                            <i class="fas fa-brain"></i>
+                            <span>IA & ML</span>
+                        </div>
+                        <div class="profile-badge badge-bottom">
+                            <i class="fab fa-python"></i>
+                            <span>Python</span>
+                        </div>
                     </div>
                 </div>
             </div>
+            <div class="hero-scroll-hint">
+                <span>Scroll</span>
+                <div class="scroll-line"></div>
+            </div>
         </section>
 
+        <!-- About Section -->
         <section id="about">
             <div class="container">
-                <h2>À propos de moi</h2>
-                <div class="about-content">
-                    <div class="about-text">
-                        <p>Étudiant en 5ème année à l'EMSI, spécialisé en Ingénierie Informatique (IA & Data). Passionné par le développement logiciel, l'intelligence artificielle et l'analyse de données, je maîtrise plusieurs technologies telles que Python, Java, JavaScript, React.js et les bases de données. Curieux, rigoureux et autonome, je suis à la recherche d'opportunités me permettant d'approfondir mes connaissances et de contribuer à des projets innovants.</p>
-                        <div class="quick-info">
-                            <div class="info-item">
+                <div class="section-header">
+                    <span class="section-tag">// À propos</span>
+                    <h2>Qui suis-je ?</h2>
+                    <p>Passionné, curieux et orienté résultats</p>
+                </div>
+                <div class="about-grid">
+                    <div class="about-text-card">
+                        <p>
+                            Étudiant en 5ème année à l'<strong>EMSI Casablanca</strong>, spécialisé en Ingénierie Informatique (IA & Data). Je maîtrise plusieurs technologies allant du <strong>Machine Learning</strong> au développement web full-stack, avec une passion particulière pour l'intelligence artificielle et l'analyse de données.
+                        </p>
+                        <p>
+                            Curieux, rigoureux et autonome, je suis à la recherche d'opportunités me permettant d'approfondir mes connaissances et de contribuer à des <strong>projets innovants</strong>.
+                        </p>
+                    </div>
+                    <div class="about-info-grid">
+                        <div class="info-card">
+                            <div class="info-icon">
                                 <i class="fas fa-map-marker-alt"></i>
-                                <span>Casablanca, Maroc</span>
                             </div>
-                            <div class="info-item">
+                            <div>
+                                <span class="info-label">Localisation</span>
+                                <span class="info-value">Casablanca, Maroc</span>
+                            </div>
+                        </div>
+                        <div class="info-card">
+                            <div class="info-icon">
                                 <i class="fas fa-phone"></i>
-                                <span>+212 6 82 00 50 20</span>
                             </div>
-                            <div class="info-item">
+                            <div>
+                                <span class="info-label">Téléphone</span>
+                                <span class="info-value">+212 7 82 00 50 20</span>
+                            </div>
+                        </div>
+                        <div class="info-card">
+                            <div class="info-icon">
                                 <i class="fas fa-envelope"></i>
-                                <span>reddadbusiness@gmail.com</span>
                             </div>
-                            <div class="info-item">
+                            <div>
+                                <span class="info-label">Email</span>
+                                <span class="info-value">reddadbusiness@gmail.com</span>
+                            </div>
+                        </div>
+                        <div class="info-card">
+                            <div class="info-icon">
                                 <i class="fab fa-linkedin"></i>
-                                <a href="https://www.linkedin.com/in/reddad-chaouay-4a4023311/" target="_blank">Reddad Chaouay</a>
+                            </div>
+                            <div>
+                                <span class="info-label">LinkedIn</span>
+                                <a href="https://www.linkedin.com/in/reddad-chaouay-4a4023311/" target="_blank" class="info-value link">Reddad Chaouay</a>
                             </div>
                         </div>
                     </div>
@@ -80,234 +184,294 @@
             </div>
         </section>
 
+        <!-- Education Section -->
         <section id="education">
             <div class="container">
-                <h2>Formation</h2>
+                <div class="section-header">
+                    <span class="section-tag">// Formation</span>
+                    <h2>Parcours académique</h2>
+                    <p>Mon chemin vers l'excellence</p>
+                </div>
                 <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-date">2022 – 2026</div>
-                        <div class="timeline-content">
-                            <h3>EMSI – École Marocaine des Sciences de l'Ingénieur, Casablanca</h3>
-                            <p>5ème année – Cycle d'ingénieur en Informatique et Réseaux (IA & Data)</p>
+                    <div class="timeline-item reveal">
+                        <div class="timeline-left">
+                            <div class="timeline-year">2022 – 2026</div>
+                            <div class="timeline-dot active"></div>
+                        </div>
+                        <div class="timeline-card">
+                            <div class="timeline-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="timeline-body">
+                                <h3>EMSI – École Marocaine des Sciences de l'Ingénieur</h3>
+                                <p class="timeline-location"><i class="fas fa-map-marker-alt"></i> Casablanca, Maroc</p>
+                                <p>5ème année – Cycle d'ingénieur en Informatique et Réseaux <strong>(IA & Data)</strong></p>
+                                <div class="timeline-tags">
+                                    <span>IA</span><span>Data Science</span><span>ML</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="timeline-item">
-                        <div class="timeline-date">2020 – 2021</div>
-                        <div class="timeline-content">
-                            <h3>Diplôme de Langues (Russe / Ukrainien – en Ukraine)</h3>
+                    <div class="timeline-item reveal">
+                        <div class="timeline-left">
+                            <div class="timeline-year">2020 – 2021</div>
+                            <div class="timeline-dot"></div>
+                        </div>
+                        <div class="timeline-card">
+                            <div class="timeline-icon">
+                                <i class="fas fa-language"></i>
+                            </div>
+                            <div class="timeline-body">
+                                <h3>Diplôme de Langues</h3>
+                                <p class="timeline-location"><i class="fas fa-map-marker-alt"></i> Ukraine</p>
+                                <p>Russe & Ukrainien — Formation linguistique avancée</p>
+                                <div class="timeline-tags">
+                                    <span>Russe</span><span>Ukrainien</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="timeline-item">
-                        <div class="timeline-date">2019 – 2020</div>
-                        <div class="timeline-content">
-                            <h3>Baccalauréat – Sciences Physiques et Chimie</h3>
+                    <div class="timeline-item reveal">
+                        <div class="timeline-left">
+                            <div class="timeline-year">2019 – 2020</div>
+                            <div class="timeline-dot"></div>
+                        </div>
+                        <div class="timeline-card">
+                            <div class="timeline-icon">
+                                <i class="fas fa-atom"></i>
+                            </div>
+                            <div class="timeline-body">
+                                <h3>Baccalauréat – Sciences Physiques et Chimie</h3>
+                                <p class="timeline-location"><i class="fas fa-map-marker-alt"></i> Maroc</p>
+                                <div class="timeline-tags">
+                                    <span>Sciences</span><span>Physique</span><span>Chimie</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- Projects Section -->
         <section id="projects">
             <div class="container">
-                <h2>Expériences Académiques & Professionnelles</h2>
+                <div class="section-header">
+                    <span class="section-tag">// Expériences</span>
+                    <h2>Projets & Expériences</h2>
+                    <p>Ce que j'ai construit et appris</p>
+                </div>
                 <div class="projects-grid">
-                    <div class="project-card">
-                        <div class="project-icon">
-                            <i class="fas fa-car"></i>
+                    <div class="project-card reveal">
+                        <div class="project-card-header">
+                            <div class="project-icon-wrap">
+                                <i class="fas fa-car"></i>
+                            </div>
+                            <div class="project-year">2026</div>
                         </div>
-                        <h3>STARTIS CAR — Plateforme Intelligente & IA (Stage PFA)</h3>
-                        <p class="project-date">2026</p>
-                        <p>Conception et développement d'une plateforme intelligente de gestion et de location de véhicules intégrant l'Intelligence Artificielle (RAG - Retrieval-Augmented Generation), des services IoT pour la gestion et le contrôle à distance, une application mobile interactive et une interface web moderne.</p>
+                        <div class="project-type">Stage PFA</div>
+                        <h3>STARTIS CAR — Plateforme Intelligente & IA</h3>
+                        <p>Conception et développement d'une plateforme intelligente de gestion et location de véhicules intégrant l'IA (RAG), des services IoT pour le contrôle à distance, une application mobile et une interface web moderne.</p>
                         <div class="project-tags">
                             <span>RAG</span>
-                            <span>Intelligence Artificielle</span>
+                            <span>IA</span>
                             <span>IoT</span>
                             <span>Mobile</span>
-                            <span>FastAPI / Python</span>
+                            <span>FastAPI</span>
+                            <span>Python</span>
                         </div>
                     </div>
 
-                    <div class="project-card">
-                        <div class="project-icon">
-                            <i class="fas fa-running"></i>
+                    <div class="project-card reveal">
+                        <div class="project-card-header">
+                            <div class="project-icon-wrap">
+                                <i class="fas fa-running"></i>
+                            </div>
+                            <div class="project-year">2025–2026</div>
                         </div>
+                        <div class="project-type">Projet Académique</div>
                         <h3>SportsTech — Analytics & Prédiction des Blessures</h3>
-                        <p class="project-date">2025 – 2026</p>
-                        <p>Pipeline de données et Feature Engineering physiologique avec Python. Modélisation prédictive du risque de blessure (Machine Learning, explicabilité SHAP, calibration statistique), Backend API développé avec FastAPI et Dashboard responsive en Glassmorphism (Chart.js).</p>
+                        <p>Pipeline de données & Feature Engineering physiologique. Modélisation prédictive du risque de blessure (ML, SHAP, calibration statistique), Backend FastAPI et Dashboard Glassmorphism (Chart.js).</p>
                         <div class="project-tags">
                             <span>Machine Learning</span>
                             <span>Python</span>
                             <span>FastAPI</span>
                             <span>SHAP</span>
                             <span>Chart.js</span>
-                            <span>Data Science</span>
                         </div>
                     </div>
 
-                    <div class="project-card">
-                        <div class="project-icon">
-                            <i class="fas fa-laptop-code"></i>
+                    <div class="project-card reveal">
+                        <div class="project-card-header">
+                            <div class="project-icon-wrap">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <div class="project-year">2025</div>
                         </div>
-                        <h3>STARTIS CAR — Système de Réservation (Stage d'initiation)</h3>
-                        <p class="project-date">2025</p>
-                        <p>Participation au développement complet d'un site web de réservation de véhicules. Conception des interfaces utilisateur, gestion de base de données relationnelle MySQL, implémentation des opérations CRUD et réalisation des tests applicatifs.</p>
+                        <div class="project-type">Stage d'initiation</div>
+                        <h3>STARTIS CAR — Système de Réservation</h3>
+                        <p>Développement complet d'un site web de réservation de véhicules. Conception UI, gestion BDD MySQL, implémentation des opérations CRUD et réalisation des tests applicatifs.</p>
                         <div class="project-tags">
                             <span>PHP</span>
                             <span>MySQL</span>
                             <span>JavaScript</span>
-                            <span>HTML5 / CSS3</span>
-                            <span>CRUD</span>
+                            <span>HTML5</span>
+                            <span>CSS3</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- Skills Section -->
         <section id="skills">
             <div class="container">
-                <h2>Compétences</h2>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h3>Langues</h3>
-                        <div class="skill-list">
-                            <div class="skill-item">
-                                <span>Arabe</span>
-                                <div class="skill-level">
-                                    <div class="skill-bar" style="width: 100%"></div>
-                                </div>
-                                <span>Langue maternelle</span>
+                <div class="section-header">
+                    <span class="section-tag">// Compétences</span>
+                    <h2>Stack & Savoir-faire</h2>
+                    <p>Technologies et compétences maîtrisées</p>
+                </div>
+
+                <div class="skills-wrapper">
+                    <!-- Languages -->
+                    <div class="skill-block reveal">
+                        <h3 class="skill-block-title">
+                            <i class="fas fa-globe"></i> Langues
+                        </h3>
+                        <div class="lang-grid">
+                            <div class="lang-card">
+                                <div class="lang-flag">🇲🇦</div>
+                                <span class="lang-name">Arabe</span>
+                                <span class="lang-level native">Natif</span>
                             </div>
-                            <div class="skill-item">
-                                <span>Français</span>
-                                <div class="skill-level">
-                                    <div class="skill-bar" style="width: 100%"></div>
-                                </div>
-                                <span>Courant</span>
+                            <div class="lang-card">
+                                <div class="lang-flag">🇫🇷</div>
+                                <span class="lang-name">Français</span>
+                                <span class="lang-level fluent">Courant</span>
                             </div>
-                            <div class="skill-item">
-                                <span>Anglais</span>
-                                <div class="skill-level">
-                                    <div class="skill-bar" style="width: 75%"></div>
-                                </div>
-                                <span>Intermédiaire</span>
+                            <div class="lang-card">
+                                <div class="lang-flag">🇬🇧</div>
+                                <span class="lang-name">Anglais</span>
+                                <span class="lang-level intermediate">Intermédiaire</span>
                             </div>
-                            <div class="skill-item">
-                                <span>Russe</span>
-                                <div class="skill-level">
-                                    <div class="skill-bar" style="width: 70%"></div>
-                                </div>
-                                <span>Intermédiaire</span>
+                            <div class="lang-card">
+                                <div class="lang-flag">🇷🇺</div>
+                                <span class="lang-name">Russe</span>
+                                <span class="lang-level intermediate">Intermédiaire</span>
                             </div>
-                            <div class="skill-item">
-                                <span>Ukrainien</span>
-                                <div class="skill-level">
-                                    <div class="skill-bar" style="width: 70%"></div>
-                                </div>
-                                <span>Intermédiaire</span>
+                            <div class="lang-card">
+                                <div class="lang-flag">🇺🇦</div>
+                                <span class="lang-name">Ukrainien</span>
+                                <span class="lang-level intermediate">Intermédiaire</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="skill-category">
-                        <h3>Technologies</h3>
-                        <div class="tech-grid">
-                            <div class="tech-category">
-                                <div class="tech-header">
+                    <!-- Tech Stack -->
+                    <div class="skill-block reveal">
+                        <h3 class="skill-block-title">
+                            <i class="fas fa-code"></i> Stack Technique
+                        </h3>
+                        <div class="tech-stack-grid">
+                            <div class="tech-group">
+                                <div class="tech-group-header">
                                     <i class="fab fa-python"></i>
                                     <h4>Data Science & ML</h4>
                                 </div>
-                                <ul class="tech-list">
-                                    <li>Python</li>
-                                    <li>Pandas & NumPy</li>
-                                    <li>Scikit-Learn</li>
-                                    <li>Matplotlib & Seaborn</li>
-                                    <li>SHAP & Pipelines ML</li>
-                                    <li>Feature Engineering</li>
-                                </ul>
+                                <div class="tech-badges">
+                                    <span class="badge">Python</span>
+                                    <span class="badge">Pandas</span>
+                                    <span class="badge">NumPy</span>
+                                    <span class="badge">Scikit-Learn</span>
+                                    <span class="badge">Matplotlib</span>
+                                    <span class="badge">SHAP</span>
+                                    <span class="badge">Feature Engineering</span>
+                                </div>
                             </div>
-
-                            <div class="tech-category">
-                                <div class="tech-header">
+                            <div class="tech-group">
+                                <div class="tech-group-header">
                                     <i class="fas fa-brain"></i>
                                     <h4>Intelligence Artificielle</h4>
                                 </div>
-                                <ul class="tech-list">
-                                    <li>RAG (Retrieval-Augmented)</li>
-                                    <li>Modélisation Prédictive ML</li>
-                                    <li>Explicabilité des modèles</li>
-                                    <li>Intégration Services IoT / IA</li>
-                                </ul>
+                                <div class="tech-badges">
+                                    <span class="badge">RAG</span>
+                                    <span class="badge">LLM</span>
+                                    <span class="badge">Modélisation Prédictive</span>
+                                    <span class="badge">Explicabilité ML</span>
+                                    <span class="badge">IoT Integration</span>
+                                </div>
                             </div>
-
-                            <div class="tech-category">
-                                <div class="tech-header">
-                                    <i class="fas fa-code"></i>
+                            <div class="tech-group">
+                                <div class="tech-group-header">
+                                    <i class="fas fa-layer-group"></i>
                                     <h4>Frameworks & Web</h4>
                                 </div>
-                                <ul class="tech-list">
-                                    <li>FastAPI</li>
-                                    <li>React.js & Chart.js</li>
-                                    <li>JavaScript (ES6+)</li>
-                                    <li>HTML5 & CSS3 Glassmorphism</li>
-                                    <li>REST APIs</li>
-                                    <li>PHP</li>
-                                </ul>
+                                <div class="tech-badges">
+                                    <span class="badge">FastAPI</span>
+                                    <span class="badge">React.js</span>
+                                    <span class="badge">Chart.js</span>
+                                    <span class="badge">JavaScript ES6+</span>
+                                    <span class="badge">PHP</span>
+                                    <span class="badge">REST APIs</span>
+                                </div>
                             </div>
-
-                            <div class="tech-category">
-                                <div class="tech-header">
+                            <div class="tech-group">
+                                <div class="tech-group-header">
                                     <i class="fas fa-database"></i>
                                     <h4>Bases de Données</h4>
                                 </div>
-                                <ul class="tech-list">
-                                    <li>PostgreSQL</li>
-                                    <li>MySQL</li>
-                                    <li>SQLite</li>
-                                    <li>Formats CSV & JSON</li>
-                                </ul>
+                                <div class="tech-badges">
+                                    <span class="badge">PostgreSQL</span>
+                                    <span class="badge">MySQL</span>
+                                    <span class="badge">SQLite</span>
+                                    <span class="badge">CSV / JSON</span>
+                                </div>
                             </div>
-
-                            <div class="tech-category">
-                                <div class="tech-header">
+                            <div class="tech-group">
+                                <div class="tech-group-header">
                                     <i class="fas fa-tools"></i>
                                     <h4>Outils & Méthodes</h4>
                                 </div>
-                                <ul class="tech-list">
-                                    <li>Git & GitHub</li>
-                                    <li>VS Code & Jupyter Notebook</li>
-                                    <li>Agile Scrum & UML</li>
-                                    <li>Virtualenv (venv)</li>
-                                    <li>Docker</li>
-                                </ul>
+                                <div class="tech-badges">
+                                    <span class="badge">Git & GitHub</span>
+                                    <span class="badge">Docker</span>
+                                    <span class="badge">VS Code</span>
+                                    <span class="badge">Jupyter</span>
+                                    <span class="badge">Agile Scrum</span>
+                                    <span class="badge">UML</span>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="skill-category">
-                        <h3>Compétences Personnelles</h3>
-                        <div class="soft-skills">
-                            <div class="soft-skill-item">
-                                <i class="fas fa-puzzle-piece"></i>
+                    <!-- Soft Skills -->
+                    <div class="skill-block reveal">
+                        <h3 class="skill-block-title">
+                            <i class="fas fa-star"></i> Compétences Personnelles
+                        </h3>
+                        <div class="soft-skills-grid">
+                            <div class="soft-skill">
+                                <div class="soft-icon"><i class="fas fa-puzzle-piece"></i></div>
                                 <span>Résolution de problèmes complexes</span>
                             </div>
-                            <div class="soft-skill-item">
-                                <i class="fas fa-lightbulb"></i>
+                            <div class="soft-skill">
+                                <div class="soft-icon"><i class="fas fa-lightbulb"></i></div>
                                 <span>Esprit analytique & Pensée critique</span>
                             </div>
-                            <div class="soft-skill-item">
-                                <i class="fas fa-sync"></i>
+                            <div class="soft-skill">
+                                <div class="soft-icon"><i class="fas fa-sync-alt"></i></div>
                                 <span>Adaptabilité technologique</span>
                             </div>
-                            <div class="soft-skill-item">
-                                <i class="fas fa-tasks"></i>
+                            <div class="soft-skill">
+                                <div class="soft-icon"><i class="fas fa-tasks"></i></div>
                                 <span>Gestion de projet Agile (Scrum)</span>
                             </div>
-                            <div class="soft-skill-item">
-                                <i class="fas fa-users"></i>
+                            <div class="soft-skill">
+                                <div class="soft-icon"><i class="fas fa-users"></i></div>
                                 <span>Travail d'équipe</span>
                             </div>
-                            <div class="soft-skill-item">
-                                <i class="fas fa-comments"></i>
+                            <div class="soft-skill">
+                                <div class="soft-icon"><i class="fas fa-comments"></i></div>
                                 <span>Communication & Vulgarisation ML</span>
                             </div>
                         </div>
@@ -316,151 +480,201 @@
             </div>
         </section>
 
+        <!-- Certifications Section -->
         <section id="certifications">
             <div class="container">
-                <h2>Certifications</h2>
-                <div class="certifications-content">
-                    <div class="certifications-grid">
-                        <div class="cert-card">
-                            <i class="fab fa-google cert-icon"></i>
-                            <div class="cert-info">
-                                <h3>Agile Project Management</h3>
-                                <span class="cert-issuer">Google</span>
-                            </div>
+                <div class="section-header">
+                    <span class="section-tag">// Certifications</span>
+                    <h2>Certifications</h2>
+                    <p>Formations validées par des institutions reconnues</p>
+                </div>
+                <div class="certs-grid">
+                    <div class="cert-card reveal">
+                        <div class="cert-logo google">
+                            <i class="fab fa-google"></i>
                         </div>
-                        <div class="cert-card">
-                            <i class="fas fa-database cert-icon"></i>
-                            <div class="cert-info">
-                                <h3>Introduction to Big Data</h3>
-                                <span class="cert-issuer">UC San Diego</span>
-                            </div>
+                        <div class="cert-info">
+                            <h3>Agile Project Management</h3>
+                            <span class="cert-issuer">Google</span>
                         </div>
-                        <div class="cert-card">
-                            <i class="fas fa-code-branch cert-icon"></i>
-                            <div class="cert-info">
-                                <h3>Software Design & Project Management</h3>
-                                <span class="cert-issuer">HKUST</span>
-                            </div>
-                        </div>
-                        <div class="cert-card">
-                            <i class="fab fa-python cert-icon"></i>
-                            <div class="cert-info">
-                                <h3>Using Python to Access Web Data</h3>
-                                <span class="cert-issuer">University of Michigan</span>
-                            </div>
-                        </div>
-                        <div class="cert-card">
-                            <i class="fas fa-laptop-code cert-icon"></i>
-                            <div class="cert-info">
-                                <h3>Programmation orientée objet (C++)</h3>
-                                <span class="cert-issuer">EPFL</span>
-                            </div>
-                        </div>
-                        <div class="cert-card">
-                            <i class="fab fa-react cert-icon"></i>
-                            <div class="cert-info">
-                                <h3>React Basics</h3>
-                                <span class="cert-issuer">Meta</span>
-                            </div>
-                        </div>
-                        <div class="cert-card">
-                            <i class="fab fa-react cert-icon"></i>
-                            <div class="cert-info">
-                                <h3>React Native</h3>
-                                <span class="cert-issuer">Meta</span>
-                            </div>
-                        </div>
-                        <div class="cert-card">
-                            <i class="fab fa-google cert-icon"></i>
-                            <div class="cert-info">
-                                <h3>Digital Marketing & E-commerce</h3>
-                                <span class="cert-issuer">Google</span>
-                            </div>
-                        </div>
+                        <div class="cert-arrow"><i class="fas fa-arrow-right"></i></div>
                     </div>
-                    <div class="cert-cta">
-                        <a href="https://www.linkedin.com/in/reddad-chaouay-4a4023311/details/certifications/" target="_blank" class="btn secondary">
-                            <i class="fab fa-linkedin"></i> Voir toutes les certifications sur LinkedIn
-                        </a>
+                    <div class="cert-card reveal">
+                        <div class="cert-logo ucsd">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <div class="cert-info">
+                            <h3>Introduction to Big Data</h3>
+                            <span class="cert-issuer">UC San Diego</span>
+                        </div>
+                        <div class="cert-arrow"><i class="fas fa-arrow-right"></i></div>
                     </div>
+                    <div class="cert-card reveal">
+                        <div class="cert-logo hkust">
+                            <i class="fas fa-code-branch"></i>
+                        </div>
+                        <div class="cert-info">
+                            <h3>Software Design & Project Management</h3>
+                            <span class="cert-issuer">HKUST</span>
+                        </div>
+                        <div class="cert-arrow"><i class="fas fa-arrow-right"></i></div>
+                    </div>
+                    <div class="cert-card reveal">
+                        <div class="cert-logo michigan">
+                            <i class="fab fa-python"></i>
+                        </div>
+                        <div class="cert-info">
+                            <h3>Using Python to Access Web Data</h3>
+                            <span class="cert-issuer">University of Michigan</span>
+                        </div>
+                        <div class="cert-arrow"><i class="fas fa-arrow-right"></i></div>
+                    </div>
+                    <div class="cert-card reveal">
+                        <div class="cert-logo epfl">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <div class="cert-info">
+                            <h3>Programmation orientée objet (C++)</h3>
+                            <span class="cert-issuer">EPFL</span>
+                        </div>
+                        <div class="cert-arrow"><i class="fas fa-arrow-right"></i></div>
+                    </div>
+                    <div class="cert-card reveal">
+                        <div class="cert-logo meta">
+                            <i class="fab fa-react"></i>
+                        </div>
+                        <div class="cert-info">
+                            <h3>React Basics</h3>
+                            <span class="cert-issuer">Meta</span>
+                        </div>
+                        <div class="cert-arrow"><i class="fas fa-arrow-right"></i></div>
+                    </div>
+                    <div class="cert-card reveal">
+                        <div class="cert-logo meta">
+                            <i class="fab fa-react"></i>
+                        </div>
+                        <div class="cert-info">
+                            <h3>React Native</h3>
+                            <span class="cert-issuer">Meta</span>
+                        </div>
+                        <div class="cert-arrow"><i class="fas fa-arrow-right"></i></div>
+                    </div>
+                    <div class="cert-card reveal">
+                        <div class="cert-logo google">
+                            <i class="fab fa-google"></i>
+                        </div>
+                        <div class="cert-info">
+                            <h3>Digital Marketing & E-commerce</h3>
+                            <span class="cert-issuer">Google</span>
+                        </div>
+                        <div class="cert-arrow"><i class="fas fa-arrow-right"></i></div>
+                    </div>
+                </div>
+                <div class="cert-cta">
+                    <a href="https://www.linkedin.com/in/reddad-chaouay-4a4023311/details/certifications/" target="_blank" class="btn btn-outline-green">
+                        <i class="fab fa-linkedin"></i>
+                        Voir toutes les certifications sur LinkedIn
+                    </a>
                 </div>
             </div>
         </section>
 
+        <!-- Contact Section -->
         <section id="contact">
             <div class="container">
-                <h2>Contact</h2>
-                <div class="contact-content">
+                <div class="section-header">
+                    <span class="section-tag">// Contact</span>
+                    <h2>Travaillons ensemble</h2>
+                    <p>Disponible pour toute opportunité ou collaboration</p>
+                </div>
+                <div class="contact-grid">
                     <div class="contact-info">
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <div>
-                                <h3>Téléphone</h3>
-                                <p>+212 6 82 00 50 20</p>
+                        <div class="contact-intro">
+                            <h3>Prêt à collaborer ?</h3>
+                            <p>N'hésitez pas à me contacter pour toute opportunité de stage, alternance ou projet collaboratif.</p>
+                        </div>
+                        <div class="contact-items">
+                            <a href="tel:+212782005020" class="contact-item-card">
+                                <div class="contact-item-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div>
+                                    <span class="contact-item-label">Téléphone</span>
+                                    <span class="contact-item-value">+212 6 82 00 50 20</span>
+                                </div>
+                            </a>
+                            <a href="mailto:reddadbusiness@gmail.com" class="contact-item-card">
+                                <div class="contact-item-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <span class="contact-item-label">Email</span>
+                                    <span class="contact-item-value">reddadbusiness@gmail.com</span>
+                                </div>
+                            </a>
+                            <div class="contact-item-card">
+                                <div class="contact-item-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <span class="contact-item-label">Localisation</span>
+                                    <span class="contact-item-value">Casablanca, Maroc</span>
+                                </div>
                             </div>
                         </div>
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <div>
-                                <h3>Email</h3>
-                                <p>reddadbusiness@gmail.com</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div>
-                                <h3>Localisation</h3>
-                                <p>Casablanca, Maroc</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fab fa-linkedin"></i>
-                            <div>
-                                <h3>LinkedIn</h3>
-                                <a href="https://www.linkedin.com/in/reddad-chaouay-4a4023311/" target="_blank">Reddad Chaouay</a>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fab fa-github"></i>
-                            <div>
-                                <h3>GitHub</h3>
-                                <a href="https://github.com/redinho2002" target="_blank">redinho2002</a>
-                            </div>
+                        <div class="contact-socials">
+                            <a href="https://www.linkedin.com/in/reddad-chaouay-4a4023311/" target="_blank" class="social-btn linkedin">
+                                <i class="fab fa-linkedin"></i>
+                                LinkedIn
+                            </a>
+                            <a href="https://github.com/redinho2002" target="_blank" class="social-btn github">
+                                <i class="fab fa-github"></i>
+                                GitHub
+                            </a>
                         </div>
                     </div>
-                    <div class="contact-form">
+                    <div class="contact-form-wrap">
                         <form id="contactForm" action="https://formsubmit.co/reddadbusiness@gmail.com" method="POST">
                             <input type="hidden" name="_captcha" value="false">
-                            <div class="form-group">
-                                <input type="text" id="name" name="name" placeholder="Votre nom" required>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name">Nom complet</label>
+                                    <input type="text" id="name" name="name" placeholder="Votre nom" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" name="email" placeholder="votre@email.com" required>
+                                </div>
                             </div>
                             <div class="form-group">
-                                <input type="email" id="email" name="email" placeholder="Votre email" required>
+                                <label for="subject">Sujet</label>
+                                <input type="text" id="subject" name="subject" placeholder="Objet de votre message" required>
                             </div>
                             <div class="form-group">
-                                <input type="text" id="subject" name="subject" placeholder="Sujet" required>
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" placeholder="Votre message..." rows="6" required></textarea>
                             </div>
-                            <div class="form-group">
-                                <textarea id="message" name="message" placeholder="Votre message" rows="5" required></textarea>
-                            </div>
-                            <button type="submit" class="btn primary" id="submitBtn">Envoyer le message</button>
+                            <button type="submit" class="btn btn-primary full-width" id="submitBtn">
+                                <i class="fas fa-paper-plane"></i>
+                                Envoyer le message
+                            </button>
                         </form>
                     </div>
                 </div>
             </div>
         </section>
+
     </main>
 
+    <!-- Footer -->
     <footer>
-        <div class="container">
-            <p>&copy; 2026 Reddad Chaouay. Tous droits réservés.</p>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/reddad-chaouay-4a4023311/" target="_blank">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="https://github.com/redinho2002" target="_blank">
-                    <i class="fab fa-github"></i>
-                </a>
+        <div class="footer-content">
+            <div class="footer-logo">RC</div>
+            <p>© 2026 Reddad Chaouay — Tous droits réservés</p>
+            <div class="footer-socials">
+                <a href="https://www.linkedin.com/in/reddad-chaouay-4a4023311/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/redinho2002" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="mailto:reddadbusiness@gmail.com"><i class="fas fa-envelope"></i></a>
             </div>
         </div>
     </footer>
